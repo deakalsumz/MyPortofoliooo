@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sehat Senyum - Klinik Terapi Gigi</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===============================
+           ROOT COLOR (PASTEL THEME)
+        =================================*/
+        :root {
+            --biru-pastel: #a8d8ff;
+            --biru-lembut: #eaf6ff;
+            --kuning-pastel: #fff4b8;
+            --putih: #ffffff;
+            --abu-lembut: #f5f9fc;
+            --text-dark: #2c3e50;
+        }
+
+        /* GLOBAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--biru-lembut);
+            color: var(--text-dark);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        section {
+            padding: 60px 10%;
+        }
+
+        /* ===============================
+           HEADER
+        =================================*/
+        header {
+            background: linear-gradient(135deg, var(--biru-pastel), var(--kuning-pastel));
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        /* NAVIGATION */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        /* ===============================
+           HERO SECTION
+        =================================*/
+        .hero {
+            background: var(--putih);
+            text-align: center;
+            padding: 80px 10%;
+            border-radius: 0 0 50px 50px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: auto;
+            opacity: 0.8;
+        }
+
+        /* ===============================
+           CARD GRID
+        =================================*/
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--putih);
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* IMAGE BULAT */
+        .card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--biru-pastel);
+            margin-bottom: 15px;
+            transition: 0.4s;
+        }
+
+        .card:hover img {
+            border-color: var(--kuning-pastel);
+            transform: scale(1.05);
+        }
+
+        /* ===============================
+           JADWAL TABLE
+        =================================*/
+        table {
+            width: 100%;
+            background: var(--putih);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        th {
+            background: var(--biru-pastel);
+        }
+
+        tr:nth-child(even) {
+            background: var(--abu-lembut);
+        }
+
+        /* ===============================
+           FORM STYLE
+        =================================*/
+        form {
+            background: var(--putih);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid var(--biru-pastel);
+            border-radius: 10px;
+            outline: none;
+        }
+
+        form button {
+            background: var(--kuning-pastel);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            background: var(--biru-pastel);
+        }
+
+        /* ===============================
+           FOOTER
+        =================================*/
+        footer {
+            background: var(--biru-pastel);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* ===============================
+           RESPONSIVE
+        =================================*/
+        @media(max-width: 768px){
+            header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+        }
+
+        /* Dekorasi Latar Belakang Gigi */
+body {
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); /* tekstur halus */
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Gigi Kartun Melayang (Dekorasi) */
+.tooth-deco {
+    position: fixed;
+    font-size: 50px;
+    opacity: 0.1;
+    z-index: -1;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* Styling tambahan agar lebih "bulat" dan ramah */
+.card, form, table {
+    border: 3px solid var(--biru-pastel);
+}
+
+.hero h2 {
+    color: #4a90e2;
+    text-shadow: 2px 2px 0px #fff;
+}
+
+/* Efek tombol agar lebih pop-out */
+form button {
+    box-shadow: 0 5px 0px #d4c88a;
+    margin-top: 10px;
+}
+
+form button:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0px #d4c88a;
+}
+
+/* Gaya Khusus untuk Kartu Dokter */
+.card-dokter h3 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.spesialis {
+    display: inline-block;
+    background: var(--biru-lembut);
+    color: #4a90e2;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 10px 0;
+    border: 2px solid var(--biru-pastel);
+}
+
+.card-dokter p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Efek khusus saat kursor menyentuh kartu dokter */
+.card-dokter:hover {
+    background: linear-gradient(to bottom, #ffffff, #f0f8ff);
+    transform: translateY(-12px) rotate(1deg);
+} 
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🦷 Sehat Senyum</h1>
+    <nav>
+        <ul>
+            <li><a href="#profil">Profil</a></li>
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#jadwal">Jadwal</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+            <li><a href="#dokter">Dokter Gigi Hebat Kami</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Senyum Sehat, Percaya Diri Meningkat ✨</h2>
+    <p>Klinik Terapi Gigi Sehat Senyum hadir memberikan pelayanan terbaik dengan teknologi modern dan tenaga profesional untuk menjaga kesehatan gigi Anda dan keluarga.</p>
+</section>
+
+<section id="profil">
+    <h2>Profil Klinik</h2>
+    <div class="card">
+        <p>Klinik Terapi Gigi <strong>Sehat Senyum</strong> berdiri sejak 2020 dengan komitmen memberikan layanan perawatan gigi yang nyaman, ramah, dan berkualitas.</p>
+    </div>
+</section>
+
+<section id="layanan">
+    <h2>Layanan Kami</h2>
+    <div class="card-container">
+
+        <div class="card">
+            <img src="scalling.jpeg" alt="Scaling Gigi">
+            <h3>Scaling</h3>
+            <p>Pembersihan karang gigi untuk menjaga kesehatan gusi dan kesegaran mulut.</p>
+        </div>
+
+        <div class="card">
+            <img src="gigi bolong.jpeg" alt="Tambal Gigi">
+            <h3>Tambal Gigi</h3>
+            <p>Perawatan gigi berlubang dengan bahan berkualitas dan aman.</p>
+        </div>
+
+        <div class="card">
+            <img src="bleaching.jpeg" alt="Pemutihan Gigi">
+            <h3>Pemutihan Gigi</h3>
+            <p>Perawatan estetika untuk membuat senyum lebih cerah dan percaya diri.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="jadwal">
+    <h2>Jadwal Praktik</h2>
+    <table>
+        <tr>
+            <th>Hari</th>
+            <th>Jam Buka</th>
+        </tr>
+        <tr>
+            <td>Senin - Jumat</td>
+            <td>08.00 - 20.00</td>
+        </tr>
+        <tr>
+            <td>Sabtu</td>
+            <td>09.00 - 15.00</td>
+        </tr>
+        <tr>
+            <td>Minggu</td>
+            <td>Tutup</td>
+        </tr>
+    </table>
+</section>
+
+<section id="kontak">
+    <h2>Hubungi Kami</h2>
+    <form>
+        <input type="text" placeholder="Nama Lengkap" required>
+        <input type="email" placeholder="Email" required>
+        <textarea rows="4" placeholder="Pesan Anda..." required></textarea>
+        <button type="submit">Kirim Pesan</button>
+    </form>
+
+    <section id="dokter">
+    <h2>Dokter Gigi Hebat Kami</h2>
+    <div class="card-container">
+
+        <div class="card card-dokter">
+            <img src="_ (3).jpeg" alt="drg. Ju Ji-hoon">
+            <h3>drg. Ju Ji-hoon, Sp.KG</h3>
+            <span class="spesialis">Spesialis Konservasi Gigi</span>
+            <p>Ahli dalam merawat dan mempertahankan gigi asli agar tetap sehat dan kuat.</p>
+        </div>
+
+        <div class="card card-dokter">
+            <img src="Gemini_Generated_Image_ft3jvrft3jvrft3j.png" alt="drg. Kim Taehyung">
+            <h3>drg. Kim Taehyung, Sp.KGA</h3>
+            <span class="spesialis">Spesialis Kedokteran Gigi Anak</span>
+            <p>Sahabat anak-anak! Membuat pengalaman periksa gigi jadi seru dan tidak menakutkan.</p>
+        </div>
+
+        <div class="card card-dokter">
+            <img src="IMG_6692 2.jpg" alt="drg. Lee Haechan">
+            <h3>drg. Lee Haechan, Sp.Ort</h3>
+            <span class="spesialis">Spesialis Ortodonti</span>
+            <p>Pakar dalam merapikan barisan gigi agar senyum makin simetris dan menawan.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Sehat Senyum | Klinik Terapi Gigi 💙</p>
+</footer>
+
+<div class="tooth-deco" style="top: 15%; left: 5%;">🦷</div>
+<div class="tooth-deco" style="top: 40%; right: 3%; animation-delay: 1s;">✨</div>
+<div class="tooth-deco" style="bottom: 10%; left: 2%; animation-delay: 2s;">🦷</div>
+<div class="tooth-deco" style="top: 70%; right: 8%; animation-delay: 3s;">🪥</div>
+
+<script>
+    // Sedikit interaksi: Ikon di header bisa goyang saat di-hover
+    const logo = document.querySelector('header h1');
+    logo.style.cursor = 'pointer';
+    logo.addEventListener('mouseover', () => {
+        logo.style.transition = '0.3s';
+        logo.style.transform = 'scale(1.2) rotate(10deg)';
+    });
+    logo.addEventListener('mouseout', () => {
+        logo.style.transform = 'scale(1) rotate(0deg)';
+    });
+</script>
+
+</body>
+</html>
